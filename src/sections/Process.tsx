@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { AgentBentoGrid } from '@/components/ui/agent-bento-grid'
 
 // El teal es demasiado claro para texto blanco (2.16:1): sobre teal va navy,
 // igual que la S del logo. Sobre púrpura y gris el blanco sí pasa.
@@ -85,6 +86,12 @@ export default function Process() {
               </p>
             </motion.div>
           ))}
+        </div>
+
+        {/* Visuales de cómo operamos: los "cuadritos" animados.
+            Fusionado desde BentoSection para no duplicar la sección "método". */}
+        <div className="mt-20">
+          <AgentBentoGrid />
         </div>
 
         {/* Nube de integraciones */}

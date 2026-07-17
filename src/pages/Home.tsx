@@ -2,7 +2,6 @@ import Navbar from '@/sections/Navbar'
 import Hero from '@/sections/Hero'
 import StatsBand from '@/sections/StatsBand'
 import Services from '@/sections/Services'
-import BentoSection from '@/sections/BentoSection'
 import Process from '@/sections/Process'
 import Plans from '@/sections/Plans'
 import CasoMiBillar from '@/sections/CasoMiBillar'
@@ -22,12 +21,12 @@ export default function Home() {
       <Navbar />
       <main id="contenido">
         <Hero />
-        <StatsBand />
         <Services />
-        <BentoSection />
+        {/* Process ahora incluye los visuales de "Cómo trabajamos" (fusionado). */}
         <Process />
-        <Plans />
         <CasoMiBillar />
+        <StatsBand />
+        <Plans />
         <Contact />
         <CTA />
       </main>
