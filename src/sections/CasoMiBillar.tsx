@@ -42,7 +42,7 @@ const points = [
 export default function CasoMiBillar() {
   return (
     <section id="caso" className="relative bg-slate-50 py-28">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-block rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm font-medium text-slate-600">
             Caso real

@@ -9,7 +9,7 @@ export default function CTA() {
     <>
       {/* CTA final */}
       <section className="relative py-28">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-7xl px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}

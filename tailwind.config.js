@@ -117,6 +117,11 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
         xs: "calc(var(--radius) - 6px)",
       },
+      // Contenedores mas anchos (1440px) para que la web respire mas,
+      // igual que la referencia DataFlow. Afecta a todos los max-w-7xl.
+      maxWidth: {
+        "7xl": "90rem",
+      },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
       },
