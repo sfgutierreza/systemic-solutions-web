@@ -26,12 +26,11 @@ export default function CTA() {
               Primera consulta gratis
             </span>
             <h2 className="relative mx-auto mt-6 max-w-2xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-              Cuéntanos qué necesita{' '}
-              <span className="text-teal-400">tu negocio</span>
+              ¿Listo para <span className="text-teal-400">empezar</span>?
             </h2>
             <p className="relative mx-auto mt-4 max-w-xl text-lg text-slate-400">
-              Escríbenos qué proceso te quita más tiempo. Te respondemos el mismo
-              día y te decimos con franqueza si podemos ayudarte.
+              Te respondemos el mismo día con una propuesta concreta: qué
+              haríamos, cuánto cuesta y en cuánto tiempo.
             </p>
             <div className="relative mt-10 flex flex-wrap items-center justify-center gap-4">
               <Button
@@ -74,10 +73,12 @@ export default function CTA() {
             </span>
           </a>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-slate-500">
+            {/* "Cómo trabajamos" se fusionó dentro de Proceso: un solo link. */}
             <a href="#servicios" className="hover:text-slate-900">Servicios</a>
-            <a href="#proceso" className="hover:text-slate-900">Cómo trabajamos</a>
+            <a href="#planes" className="hover:text-slate-900">Planes</a>
             <a href="#proceso" className="hover:text-slate-900">Proceso</a>
             <a href="#caso" className="hover:text-slate-900">Caso MiBillar</a>
+            <a href="#contacto" className="hover:text-slate-900">Contacto</a>
           </div>
           <p className="text-sm text-slate-500">
             © 2026 Systemic Solutions. Todos los derechos reservados.

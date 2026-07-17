@@ -29,8 +29,8 @@ const points = [
   },
   {
     icon: Building2,
-    title: 'Multi-tenant desde el día uno',
-    body: 'Cada negocio con sus datos aislados. La misma base escala de un cliente a cien sin reescribir nada.',
+    title: 'Hecho para escalar',
+    body: 'Cada cliente con sus datos aparte. La misma base atiende de un cliente a cien sin reescribir nada.',
   },
   {
     icon: RefreshCw,

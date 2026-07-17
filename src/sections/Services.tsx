@@ -19,7 +19,7 @@ const services = [
     title: 'Agentes de IA para WhatsApp',
     description:
       'Agentes que atienden, venden y agendan por ti las 24 horas. Responden como humanos, trabajan como máquinas.',
-    pill: '24/7 atención',
+    pill: 'Atención 24/7',
     pillBg: 'bg-green-50 text-green-700',
   },
   {
@@ -66,7 +66,7 @@ const services = [
     icon: BarChart3,
     iconBg: 'bg-slate-100',
     iconColor: 'text-slate-500',
-    title: 'Dashboards y reportes',
+    title: 'Paneles y reportes',
     description:
       'Paneles claros para dueños de negocio: ventas, conversaciones y rendimiento, todo en tiempo real.',
     pill: 'Tiempo real',

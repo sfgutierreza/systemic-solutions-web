@@ -90,7 +90,7 @@ const orbits: OrbitConfig[] = [
       },
       {
         id: 'dashboard',
-        label: 'Dashboards',
+        label: 'Paneles',
         type: 'Reportes',
         color: '#94a3b8',
         svg: <BarChart3 className="h-5 w-5 text-slate-400" />,

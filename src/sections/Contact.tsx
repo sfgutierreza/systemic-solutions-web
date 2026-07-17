@@ -62,7 +62,7 @@ export default function Contact() {
             </span>
             <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
               Cuéntanos tu{' '}
-              <span className="text-brand-teal-text">negocio</span>
+              <span className="text-brand-teal-text">proyecto</span>
             </h2>
             <p className="mt-4 text-lg text-slate-600">
               Conocemos de cerca el día a día de los negocios como el tuyo.
@@ -124,12 +124,12 @@ export default function Contact() {
                 <Input
                   id="whatsapp"
                   {...register('whatsapp')}
-                  placeholder="951 045 601"
+                  placeholder="Tu número, ej. 987 654 321"
                   className="mt-1.5"
                 />
               </div>
               <div>
-                <Label htmlFor="message">¿Qué necesita tu negocio?</Label>
+                <Label htmlFor="message">¿Qué necesitas?</Label>
                 <Textarea
                   id="message"
                   {...register('message')}

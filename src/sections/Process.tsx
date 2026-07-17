@@ -40,16 +40,16 @@ const steps = [
   },
 ]
 
+// Solo herramientas que el público objetivo (dueños de negocio en Perú) usa a
+// diario y que realmente integramos. Nada de logos de oficina gringa de relleno.
 const logos = [
   'WhatsApp',
-  'Google Workspace',
+  'Facebook',
+  'Instagram',
+  'Yape',
+  'Plin',
+  'Google Calendar',
   'Gmail',
-  'Slack',
-  'Notion',
-  'Stripe',
-  'Zapier',
-  'Calendly',
-  'HubSpot',
 ]
 
 export default function Process() {

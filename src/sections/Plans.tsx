@@ -29,7 +29,7 @@ const plans: Plan[] = [
       'Formulario + botón de WhatsApp',
       'Dominio .pe incluido el primer año',
       'Hosting en Vercel (rápido, HTTPS)',
-      'Mantenimiento S/ 19.90/mes (renovación + ediciones)',
+      'Mantenimiento opcional: S/ 19.90/mes (dominio + ediciones)',
     ],
     cta: 'Quiero mi web',
     href: '#contacto',
@@ -60,9 +60,9 @@ const plans: Plan[] = [
     cadence: '/mes',
     features: [
       'Agente de IA en WhatsApp 24/7',
-      'Atiende, responde y agenda por ti',
+      'Atiende, vende y agenda por ti',
       'Con tu catálogo y precios',
-      'Dashboard de ventas y conversaciones',
+      'Panel de ventas y conversaciones',
       'Implementación en días, no meses',
     ],
     cta: 'Automatizar mi negocio',
@@ -101,10 +101,10 @@ export default function Plans() {
           </span>
           <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
             Precios claros para{' '}
-            <span className="text-brand-teal-text">tu negocio</span>
+            <span className="text-brand-teal-text">ti</span>
           </h2>
           <p className="mt-4 text-lg text-slate-600">
-            Sin letra chiquita. Tu negocio merece tecnología de primera.
+            Sin letra chiquita ni costos escondidos.
           </p>
         </div>
 
@@ -152,7 +152,7 @@ export default function Plans() {
                       p.highlight ? 'text-slate-300' : 'text-slate-500'
                     }`}
                   >
-                    Setup S/ {p.setup.toFixed(2).replace('.00', '')} · luego
+                    Implementación S/ {p.setup.toFixed(2).replace('.00', '')} · luego
                   </p>
                 )}
                 <Price value={p.monthly} cadence={p.cadence} prefix="S/" highlight={p.highlight} />
@@ -196,7 +196,7 @@ export default function Plans() {
         </div>
 
         <p className="mt-10 text-center text-sm text-slate-500">
-          ¿No estás seguro cuál funciona para ti?{' '}
+          ¿No sabes cuál elegir?{' '}
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-teal-deep hover:underline">
             Escríbenos por WhatsApp
           </a>{' '}
