@@ -98,8 +98,7 @@ export default function Plans() {
             <span className="text-brand-teal-text">tu negocio</span>
           </h2>
           <p className="mt-4 text-lg text-slate-600">
-            Sin letra chiquita. En Tingo María y la selva peruana, tu negocio
-            merece tecnología de primera a precio de provincia.
+            Sin letra chiquita. Tu negocio merece tecnología de primera.
           </p>
         </div>
 

@@ -65,19 +65,13 @@ export default function Contact() {
               <span className="text-brand-teal-text">negocio</span>
             </h2>
             <p className="mt-4 text-lg text-slate-600">
-              En Tingo María y la selva peruana conocemos de cerca el día a día de
-              los negocios como el tuyo. Cuéntanos qué proceso te quita tiempo y te
-              armamos una propuesta clara, sin lenguaje de consultora.
+              Conocemos de cerca el día a día de los negocios como el tuyo.
+              Cuéntanos qué proceso te quita tiempo y te armamos una propuesta
+              clara, sin lenguaje de consultora.
             </p>
             <div className="mt-8 flex items-center gap-2 text-sm text-slate-600">
               <MapPin className="h-4 w-4 text-brand-teal-text" />
-              <span>
-                Con base en{' '}
-                <span className="font-semibold text-slate-900">
-                  Tingo María, Huánuco
-                </span>{' '}
-                — atendemos a todo el Perú.
-              </span>
+              <span>· Atendemos en todo el Perú</span>
             </div>
             <Button
               asChild
