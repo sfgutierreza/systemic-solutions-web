@@ -34,10 +34,12 @@ module.exports = {
         ],
       },
       colors: {
-        // Púrpura de marca Systemic Solutions.
-        // 500 (#7A2BFA) es el oficial y se usa sobre fondos claros.
-        // 400 (#9D5CFF) es la variante para fondos oscuros: el 500 sobre el
-        // navy #0F172A cae a 3.02:1 y se apaga por debajo de su propia etiqueta.
+        // Púrpura de marca Systemic Solutions (escala violet, elegida por el
+        // dueño: más viva que el #7A2BFA original). 500 (#8B5CF6) es el color.
+        // OJO de contraste: #8B5CF6 tiene luminancia media, así que como FONDO
+        // de un badge ni blanco (4.23) ni navy (4.22) llegan a 4.5:1 — para
+        // texto encima usa 600 (#7C3AED, blanco 5.70:1). Como TEXTO sobre
+        // blanco, #8B5CF6 da 4.23:1: vale para texto grande, no para pequeño.
         brand: {
           purple: {
             50: "#F4EDFF",

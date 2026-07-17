@@ -14,7 +14,9 @@ const steps = [
   },
   {
     num: '02',
-    color: 'bg-brand-purple',
+    // purple-600 en vez del 500 (#8B5CF6): sobre el 500 ni blanco ni navy
+    // llegan a 4.5:1 (luminancia media). El 600 con blanco da 5.70:1.
+    color: 'bg-brand-purple-600',
     textColor: 'text-white',
     title: 'Diseño a medida',
     description:

@@ -71,7 +71,7 @@ export default function Contact() {
             </p>
             <div className="mt-8 flex items-center gap-2 text-sm text-slate-600">
               <MapPin className="h-4 w-4 text-brand-teal-text" />
-              <span>· Atendemos en todo el Perú</span>
+              <span>Atendemos en todo el Perú</span>
             </div>
             <Button
               asChild
@@ -155,7 +155,7 @@ export default function Contact() {
                 )}
                 {isSubmitting ? 'Enviando…' : 'Enviar mensaje'}
               </Button>
-              <p className="text-center text-xs text-slate-400">
+              <p className="text-center text-xs text-slate-500">
                 Sin spam. Respondemos el mismo día.
               </p>
             </div>

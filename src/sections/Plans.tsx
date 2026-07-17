@@ -73,14 +73,20 @@ const plans: Plan[] = [
 /** Render del precio con el decimal (.90 / .00) en tamaño menor. */
 function Price({ value, cadence, prefix, highlight }: { value: number; cadence: string; prefix?: string; highlight?: boolean }) {
   const [int, dec] = value.toFixed(2).split('.')
+  // En la tarjeta destacada (fondo navy) los grises claros invierten:
+  // slate-900 sería invisible (1:1). slate-300/400 pasan holgado sobre navy.
   return (
     <div className="flex items-baseline gap-1">
-      {prefix && <span className="text-lg font-bold text-slate-900">{prefix}</span>}
+      {prefix && (
+        <span className={`text-lg font-bold ${highlight ? 'text-slate-300' : 'text-slate-900'}`}>
+          {prefix}
+        </span>
+      )}
       <span className={`text-4xl font-extrabold tracking-tight ${highlight ? 'text-white' : 'text-slate-900'} sm:text-5xl`}>
         {int}
       </span>
-      <span className="text-xl font-bold text-slate-400">.{dec}</span>
-      <span className="ml-1 text-sm font-medium text-slate-500">{cadence}</span>
+      <span className={`text-xl font-bold ${highlight ? 'text-slate-400' : 'text-slate-500'}`}>.{dec}</span>
+      <span className={`ml-1 text-sm font-medium ${highlight ? 'text-slate-400' : 'text-slate-500'}`}>{cadence}</span>
     </div>
   )
 }
@@ -191,7 +197,7 @@ export default function Plans() {
 
         <p className="mt-10 text-center text-sm text-slate-500">
           ¿No estás seguro cuál funciona para ti?{' '}
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-teal-600 hover:underline">
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-teal-deep hover:underline">
             Escríbenos por WhatsApp
           </a>{' '}
           y te ayudamos a elegir.
