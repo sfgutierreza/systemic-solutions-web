@@ -134,15 +134,18 @@ export default function Hero() {
             Software · IA · Automatización — Tingo María, Perú
           </span>
 
-          <h1 className="mt-6 text-5xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-6xl">
+          <h1 className="mt-8 text-5xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-6xl">
             Construimos el software
             <br />
-            que <span className="text-brand-teal-text">hace crecer</span>
+            que{' '}
+            <span className="bg-gradient-to-r from-teal-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(45,212,191,0.35)]">
+              hace crecer
+            </span>
             <br />
             tu negocio
           </h1>
 
-          <p className="mt-6 max-w-md text-lg leading-relaxed text-slate-600">
+          <p className="mt-8 max-w-md text-lg leading-relaxed text-slate-600">
             Agentes de IA para WhatsApp, webs inteligentes, SaaS a medida y
             automatización. Todo conectado: WhatsApp, correo y Google Workspace.
           </p>
