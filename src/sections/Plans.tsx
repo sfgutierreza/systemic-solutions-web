@@ -71,12 +71,12 @@ const plans: Plan[] = [
 ]
 
 /** Render del precio con el decimal (.90 / .00) en tamaño menor. */
-function Price({ value, cadence, prefix }: { value: number; cadence: string; prefix?: string }) {
+function Price({ value, cadence, prefix, highlight }: { value: number; cadence: string; prefix?: string; highlight?: boolean }) {
   const [int, dec] = value.toFixed(2).split('.')
   return (
     <div className="flex items-baseline gap-1">
       {prefix && <span className="text-lg font-bold text-slate-900">{prefix}</span>}
-      <span className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+      <span className={`text-4xl font-extrabold tracking-tight ${highlight ? 'text-white' : 'text-slate-900'} sm:text-5xl`}>
         {int}
       </span>
       <span className="text-xl font-bold text-slate-400">.{dec}</span>
@@ -150,7 +150,7 @@ export default function Plans() {
                     Setup S/ {p.setup.toFixed(2).replace('.00', '')} · luego
                   </p>
                 )}
-                <Price value={p.monthly} cadence={p.cadence} prefix="S/" />
+                <Price value={p.monthly} cadence={p.cadence} prefix="S/" highlight={p.highlight} />
               </div>
 
               <ul className="mt-6 flex-1 space-y-3">
@@ -195,7 +195,7 @@ export default function Plans() {
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-teal-600 hover:underline">
             Escríbenos por WhatsApp
           </a>{' '}
-          y te ayudamos sin compromiso.
+          y te ayudamos a elegir.
         </p>
       </div>
     </section>

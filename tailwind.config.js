@@ -33,11 +33,11 @@ module.exports = {
           purple: {
             50: "#F4EDFF",
             100: "#E9DBFF",
-            400: "#9D5CFF",
-            500: "#7A2BFA",
-            600: "#6620D6",
-            700: "#5318AF",
-            DEFAULT: "#7A2BFA",
+            400: "#A78BFA",
+            500: "#8B5CF6",
+            600: "#7C3AED",
+            700: "#6D28D9",
+            DEFAULT: "#8B5CF6",
           },
           // El teal de marca #14B8A6 vale para rellenos y para el logo, pero
           // como TEXTO sobre blanco da 2.49:1 y falla. Variantes:

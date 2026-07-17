@@ -76,7 +76,7 @@ export default function Contact() {
                 <span className="font-semibold text-slate-900">
                   Tingo María, Huánuco
                 </span>{' '}
-                — atendemos toda la región.
+                — atendemos a todo el Perú.
               </span>
             </div>
             <Button
