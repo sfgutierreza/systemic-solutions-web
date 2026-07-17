@@ -6,6 +6,7 @@ import BentoSection from '@/sections/BentoSection'
 import Process from '@/sections/Process'
 import CasoMiBillar from '@/sections/CasoMiBillar'
 import CTA from '@/sections/CTA'
+import Contact from '@/sections/Contact'
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <BentoSection />
         <Process />
         <CasoMiBillar />
+        <Contact />
         <CTA />
       </main>
     </div>

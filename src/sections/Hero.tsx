@@ -131,7 +131,7 @@ export default function Hero() {
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-teal-50 px-4 py-1.5 text-sm font-medium text-teal-700">
             <span className="h-2 w-2 rounded-full bg-teal-500" />
-            Software · IA · Automatización — Perú
+            Software · IA · Automatización — Tingo María, Perú
           </span>
 
           <h1 className="mt-6 text-5xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-6xl">
@@ -173,7 +173,8 @@ export default function Hero() {
             <Clock className="h-4 w-4 text-brand-teal-text" />
             <span className="font-semibold text-slate-900">
               Respuesta el mismo día
-            </span>
+            </span>{' '}
+            · Atendemos en Tingo María y todo el Perú
           </p>
         </motion.div>
 
