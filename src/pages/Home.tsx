@@ -4,6 +4,7 @@ import StatsBand from '@/sections/StatsBand'
 import Services from '@/sections/Services'
 import BentoSection from '@/sections/BentoSection'
 import Process from '@/sections/Process'
+import Plans from '@/sections/Plans'
 import CasoMiBillar from '@/sections/CasoMiBillar'
 import CTA from '@/sections/CTA'
 import Contact from '@/sections/Contact'
@@ -25,6 +26,7 @@ export default function Home() {
         <Services />
         <BentoSection />
         <Process />
+        <Plans />
         <CasoMiBillar />
         <Contact />
         <CTA />
