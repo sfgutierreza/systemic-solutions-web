@@ -23,7 +23,7 @@ export default function CTA() {
             <div className="pointer-events-none absolute right-1/4 top-10 h-32 w-32 rounded-full bg-slate-400/10 blur-2xl" />
 
             <span className="relative inline-block rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-medium text-teal-300">
-              Primera conversación sin compromiso
+              Primera consulta gratis
             </span>
             <h2 className="relative mx-auto mt-6 max-w-2xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
               Cuéntanos qué necesita{' '}
