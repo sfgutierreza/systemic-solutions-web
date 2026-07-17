@@ -10,11 +10,21 @@ module.exports = {
         // respaldo mientras carga el woff2.
         sans: [
           "'Inter Variable'",
+          "'JetBrains Mono Variable'",
           "ui-sans-serif",
           "system-ui",
           "sans-serif",
           "'Apple Color Emoji'",
           "'Segoe UI Emoji'",
+        ],
+        // Space Grotesk para titulares (display). Da identidad propia sin
+        // perder la legibilidad de Inter en el cuerpo del texto.
+        display: [
+          "'Space Grotesk Variable'",
+          "'Inter Variable'",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
         ],
         mono: [
           "'JetBrains Mono Variable'",
