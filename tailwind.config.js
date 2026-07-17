@@ -5,12 +5,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // Inter y no IBM Plex Sans (lo que pedía la marca v3): Plex tope en
-        // peso 700 y los titulares usan 800. El stack del sistema queda de
-        // respaldo mientras carga el woff2.
+        // Space Grotesk como fuente principal (body + titulos), igual que la
+        // referencia DataFlow. Inter queda de respaldo.
         sans: [
+          "'Space Grotesk Variable'",
           "'Inter Variable'",
-          "'JetBrains Mono Variable'",
           "ui-sans-serif",
           "system-ui",
           "sans-serif",
