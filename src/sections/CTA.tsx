@@ -75,7 +75,7 @@ export default function CTA() {
           </a>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-slate-500">
             <a href="#servicios" className="hover:text-slate-900">Servicios</a>
-            <a href="#metodo" className="hover:text-slate-900">Cómo trabajamos</a>
+            <a href="#proceso" className="hover:text-slate-900">Cómo trabajamos</a>
             <a href="#proceso" className="hover:text-slate-900">Proceso</a>
             <a href="#caso" className="hover:text-slate-900">Caso MiBillar</a>
           </div>
