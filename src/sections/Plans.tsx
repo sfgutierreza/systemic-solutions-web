@@ -87,7 +87,7 @@ function Price({ value, cadence, prefix, highlight }: { value: number; cadence: 
 
 export default function Plans() {
   return (
-    <section id="planes" className="relative bg-white py-24">
+    <section id="planes" className="relative bg-white py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-block rounded-full border border-slate-200 bg-slate-50 px-4 py-1.5 text-sm font-medium text-slate-600">
@@ -117,7 +117,7 @@ export default function Plans() {
               }`}
             >
               {p.highlight && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-teal-400 px-4 py-1 text-xs font-bold text-slate-900">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-coral px-4 py-1 text-xs font-bold text-coral-foreground">
                   Más vendido
                 </span>
               )}

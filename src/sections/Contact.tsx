@@ -52,7 +52,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contacto" className="relative bg-slate-50 py-24">
+    <section id="contacto" className="relative bg-slate-50 py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2">
           {/* Izquierda: copy local */}
