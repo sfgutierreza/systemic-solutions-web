@@ -174,7 +174,7 @@ export default function Hero() {
             <span className="font-semibold text-slate-900">
               Respuesta el mismo día
             </span>{' '}
-            · Atendemos en Tingo María y todo el Perú
+            · Atendemos en todo el Perú
           </p>
         </motion.div>
 
