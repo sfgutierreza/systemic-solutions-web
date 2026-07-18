@@ -53,20 +53,21 @@ export default function CasoMiBillar() {
       <div className="mx-auto max-w-7xl px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-block rounded-full border border-teal-200 bg-teal-50 px-4 py-1.5 text-sm font-medium text-teal-700">
-            Para dueños de billar en Tingo María
+            Para dueños de billar en el Perú
           </span>
           <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
             Controla tus mesas y tu{' '}
             <span className="text-brand-teal-text">caja</span> desde el celular
           </h2>
           <p className="mt-4 text-lg text-slate-600">
-            MiBillar es el sistema con el que billares de la selva manejan mesas,
-            ventas y finanzas todos los días. Sin instalar nada, desde cualquier
+            MiBillar es el sistema con el que billares de todo el Perú —desde la
+            selva de Tingo María hasta la costa y la sierra— manejan mesas, ventas
+            y finanzas todos los días. Sin instalar nada, desde cualquier
             dispositivo.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-slate-600">
             <span className="flex items-center gap-1.5">
-              <MapPin className="h-4 w-4 text-brand-teal-text" /> Tingo María, Perú
+              <MapPin className="h-4 w-4 text-brand-teal-text" /> Billares de todo el Perú
             </span>
             <span className="flex items-center gap-1.5">
               <Check className="h-4 w-4 text-brand-teal-text" /> S/ 39.90 al mes
