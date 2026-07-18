@@ -8,7 +8,6 @@ import {
   ExternalLink,
   Rocket,
   Building2,
-  RefreshCw,
   MapPin,
   Check,
   ArrowRight,
