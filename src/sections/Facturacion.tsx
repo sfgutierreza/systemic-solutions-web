@@ -114,13 +114,15 @@ export default function Facturacion() {
                       >
                         S/ {int}
                       </span>
-                      <span
-                        className={`text-xl font-bold ${
-                          p.highlight ? 'text-slate-400' : 'text-slate-500'
-                        }`}
-                      >
-                        .{dec}
-                      </span>
+                      {dec !== '00' && (
+                        <span
+                          className={`text-xl font-bold ${
+                            p.highlight ? 'text-slate-400' : 'text-slate-500'
+                          }`}
+                        >
+                          .{dec}
+                        </span>
+                      )}
                       <span
                         className={`ml-1 text-sm font-medium ${
                           p.highlight ? 'text-slate-400' : 'text-slate-500'
