@@ -9,9 +9,12 @@ import {
   Rocket,
   Building2,
   RefreshCw,
+  MapPin,
+  Check,
+  ArrowRight,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { MIBILLAR_URL } from '@/lib/contact'
+import { MIBILLAR_URL, WHATSAPP_URL } from '@/lib/contact'
 
 const modules = [
   { icon: LayoutGrid, label: 'Mesas', hint: 'Ocupación y tiempos' },
@@ -21,22 +24,28 @@ const modules = [
   { icon: Settings, label: 'Ajustes', hint: 'Usuarios y negocio' },
 ]
 
-const points = [
+const benefits = [
   {
     icon: Rocket,
-    title: 'En producción, no en maqueta',
-    body: 'Billares reales lo usan a diario para cobrar y cerrar caja. Nosotros lo desplegamos y lo mantenemos.',
+    title: 'Deja el papel y el Excel',
+    body: 'Registra cada mesa y cada consumo desde el celular. Sabes cuánto entró y cuánto salió al cerrar la noche.',
+  },
+  {
+    icon: Wallet,
+    title: 'Caja que no miente',
+    body: 'Ventas, gastos y resultados en tiempo real. Sin cuentas que no cuadran ni "se me perdió la boleta".',
   },
   {
     icon: Building2,
-    title: 'Hecho para escalar',
-    body: 'Cada cliente con sus datos aparte. La misma base atiende de un cliente a cien sin reescribir nada.',
+    title: 'Hecho para tu billar',
+    body: 'Multi-negocio si tienes más de un local. Cada uno con sus datos aparte, desde el mismo sistema.',
   },
-  {
-    icon: RefreshCw,
-    title: 'Crece con el cliente',
-    body: 'El módulo de Finanzas nació del pedido de un cliente: lo diseñamos, construimos y desplegamos sin tocar el resto del sistema.',
-  },
+]
+
+const faq = [
+  '¿Tengo que instalar algo? No. Abres desde el celular o la computadora.',
+  '¿Y si no sé de sistemas? Lo dejamos listo y te enseñamos. Soporte por WhatsApp.',
+  '¿Puedo probarlo? Sí. Te lo encendemos el mismo día y empiezas a usarlo.',
 ]
 
 export default function CasoMiBillar() {
@@ -44,18 +53,29 @@ export default function CasoMiBillar() {
     <section id="caso" className="relative bg-slate-50 py-28">
       <div className="mx-auto max-w-7xl px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-block rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm font-medium text-slate-600">
-            Caso real
+          <span className="inline-block rounded-full border border-teal-200 bg-teal-50 px-4 py-1.5 text-sm font-medium text-teal-700">
+            Para dueños de billar en Tingo María
           </span>
           <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-            No solo lo construimos.
-            <br />
-            Lo <span className="text-brand-teal-text">operamos</span>.
+            Controla tus mesas y tu{' '}
+            <span className="text-brand-teal-text">caja</span> desde el celular
           </h2>
           <p className="mt-4 text-lg text-slate-600">
-            MiBillar es nuestro SaaS propio: el sistema con el que billares del
-            Perú manejan mesas, ventas y finanzas todos los días.
+            MiBillar es el sistema con el que billares de la selva manejan mesas,
+            ventas y finanzas todos los días. Sin instalar nada, desde cualquier
+            dispositivo.
           </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-slate-600">
+            <span className="flex items-center gap-1.5">
+              <MapPin className="h-4 w-4 text-brand-teal-text" /> Tingo María, Perú
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Check className="h-4 w-4 text-brand-teal-text" /> S/ 39.90 al mes
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Check className="h-4 w-4 text-brand-teal-text" /> Empiezas hoy
+            </span>
+          </div>
         </div>
 
         <div className="mt-16 grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
@@ -112,7 +132,7 @@ export default function CasoMiBillar() {
                     </span>
                     {m.highlight && (
                       <span className="ml-11 basis-full whitespace-nowrap rounded-full bg-teal-400/20 px-2 py-0.5 text-center text-[10px] font-semibold text-teal-800 sm:ml-auto sm:basis-auto">
-                        pedido de un cliente
+                        lo que más usas
                       </span>
                     )}
                   </li>
@@ -121,9 +141,9 @@ export default function CasoMiBillar() {
             </div>
           </motion.div>
 
-          {/* Puntos */}
-          <div className="space-y-8">
-            {points.map((p, i) => (
+          {/* Beneficios + CTA */}
+          <div className="space-y-6">
+            {benefits.map((p, i) => (
               <motion.div
                 key={p.title}
                 initial={{ opacity: 0, y: 24 }}
@@ -148,16 +168,45 @@ export default function CasoMiBillar() {
               </motion.div>
             ))}
 
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="gap-2 rounded-xl border-slate-300 bg-white px-6"
-            >
-              <a href={MIBILLAR_URL} target="_blank" rel="noopener noreferrer">
-                Ver MiBillar en vivo <ExternalLink className="h-4 w-4" />
-              </a>
-            </Button>
+            <div className="rounded-2xl border border-slate-200 bg-white p-5">
+              <p className="text-sm font-semibold text-slate-900">
+                ¿Tienes dudas?
+              </p>
+              <ul className="mt-2 space-y-1.5">
+                {faq.map((f) => (
+                  <li key={f} className="flex gap-2 text-sm text-slate-600">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-teal-text" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Button
+                asChild
+                size="lg"
+                className="gap-2 rounded-xl bg-teal-400 px-7 font-semibold text-slate-900 hover:bg-teal-300"
+              >
+                <a
+                  href={`${WHATSAPP_URL}?text=${encodeURIComponent('Hola, quiero empezar con MiBillar para mi billar en Tingo María (S/ 39.90/mes)')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Empezar con MiBillar <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="gap-2 rounded-xl border-slate-300 bg-white px-6"
+              >
+                <a href={MIBILLAR_URL} target="_blank" rel="noopener noreferrer">
+                  Verlo en vivo <ExternalLink className="h-4 w-4" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
