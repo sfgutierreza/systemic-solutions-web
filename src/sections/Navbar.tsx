@@ -7,6 +7,7 @@ import logo from '@/assets/logo.png'
 const links = [
   { label: 'Servicios', href: '#servicios' },
   { label: 'Planes', href: '#planes' },
+  { label: 'Facturación', href: '#facturacion' },
   { label: 'Proceso', href: '#proceso' },
   { label: 'Caso MiBillar', href: '#caso' },
 ]

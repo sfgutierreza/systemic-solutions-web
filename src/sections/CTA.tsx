@@ -78,6 +78,7 @@ export default function CTA() {
             <a href="#planes" className="hover:text-slate-900">Planes</a>
             <a href="#proceso" className="hover:text-slate-900">Proceso</a>
             <a href="#caso" className="hover:text-slate-900">Caso MiBillar</a>
+            <a href="#facturacion" className="hover:text-slate-900">Facturación</a>
             <a href="#contacto" className="hover:text-slate-900">Contacto</a>
           </div>
           <p className="text-sm text-slate-500">

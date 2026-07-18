@@ -5,6 +5,7 @@ import Services from '@/sections/Services'
 import Process from '@/sections/Process'
 import Plans from '@/sections/Plans'
 import CasoMiBillar from '@/sections/CasoMiBillar'
+import Facturacion from '@/sections/Facturacion'
 import CTA from '@/sections/CTA'
 import Contact from '@/sections/Contact'
 
@@ -25,6 +26,7 @@ export default function Home() {
         {/* Process ahora incluye los visuales de "Cómo trabajamos" (fusionado). */}
         <Process />
         <CasoMiBillar />
+        <Facturacion />
         <StatsBand />
         <Plans />
         <Contact />
