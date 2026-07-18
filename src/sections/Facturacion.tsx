@@ -5,8 +5,8 @@ import { WHATSAPP_URL } from '@/lib/contact'
 
 interface FactPlan {
   name: string
-  price: string
-  suffix: string
+  /** Precio en soles, IGV incluido (como los otros planes). */
+  price: number
   users: string
   docs: string
   highlight?: boolean
@@ -15,23 +15,20 @@ interface FactPlan {
 const plans: FactPlan[] = [
   {
     name: 'Básico',
-    price: 'S/. 60',
-    suffix: '+ IGV · mensual',
+    price: 70.8,
     users: '1 usuario',
     docs: '50 comprobantes',
   },
   {
     name: 'Empresarial',
-    price: 'S/. 90',
-    suffix: '+ IGV · mensual',
+    price: 106.2,
     users: '2 usuarios',
     docs: '300 comprobantes',
     highlight: true,
   },
   {
     name: 'Corporativo',
-    price: 'S/. 140',
-    suffix: '+ IGV · mensual',
+    price: 165.2,
     users: '5 usuarios',
     docs: '500 comprobantes',
   },
@@ -106,18 +103,34 @@ export default function Facturacion() {
               </div>
 
               <div className="mt-6">
-                <div className="flex items-baseline gap-1">
-                  <span
-                    className={`text-4xl font-extrabold tracking-tight ${
-                      p.highlight ? 'text-white' : 'text-slate-900'
-                    } sm:text-5xl`}
-                  >
-                    {p.price}
-                  </span>
-                </div>
-                <p className={`mt-1 text-sm ${p.highlight ? 'text-slate-300' : 'text-slate-500'}`}>
-                  {p.suffix}
-                </p>
+                {(() => {
+                  const [int, dec] = p.price.toFixed(2).split('.')
+                  return (
+                    <div className="flex items-baseline gap-1">
+                      <span
+                        className={`text-4xl font-extrabold tracking-tight ${
+                          p.highlight ? 'text-white' : 'text-slate-900'
+                        } sm:text-5xl`}
+                      >
+                        S/ {int}
+                      </span>
+                      <span
+                        className={`text-xl font-bold ${
+                          p.highlight ? 'text-slate-400' : 'text-slate-500'
+                        }`}
+                      >
+                        .{dec}
+                      </span>
+                      <span
+                        className={`ml-1 text-sm font-medium ${
+                          p.highlight ? 'text-slate-400' : 'text-slate-500'
+                        }`}
+                      >
+                        /mes
+                      </span>
+                    </div>
+                  )
+                })()}
               </div>
 
               <ul className="mt-6 flex-1 space-y-3">
