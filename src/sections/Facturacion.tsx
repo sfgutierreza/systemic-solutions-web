@@ -15,20 +15,20 @@ interface FactPlan {
 const plans: FactPlan[] = [
   {
     name: 'Básico',
-    price: 70.8,
+    price: 60,
     users: '1 usuario',
     docs: '50 comprobantes',
   },
   {
     name: 'Empresarial',
-    price: 106.2,
+    price: 90,
     users: '2 usuarios',
     docs: '300 comprobantes',
     highlight: true,
   },
   {
     name: 'Corporativo',
-    price: 165.2,
+    price: 140,
     users: '5 usuarios',
     docs: '500 comprobantes',
   },
