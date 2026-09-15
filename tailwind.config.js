@@ -19,6 +19,7 @@ module.exports = {
         // Space Grotesk para titulares (display). Da identidad propia sin
         // perder la legibilidad de Inter en el cuerpo del texto.
         display: [
+          "Syne",
           "'Space Grotesk Variable'",
           "'Inter Variable'",
           "ui-sans-serif",

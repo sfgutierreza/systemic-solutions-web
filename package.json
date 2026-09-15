@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run build:stitch-css && tsc -b && vite build",
+    "build:stitch-css": "tailwindcss -c tailwind.stitch.config.cjs -i src/stitch-tailwind.css -o public/systemic-stitch.css --minify",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -22,3 +22,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.vercel
+.env*
+
+# Trabajo temporal de agentes (capturas de QA, backups, comparativas)
+tmp/
+
+# Entregables generados por scripts/ (PDFs comerciales, tarjeta de imprenta).
+# Se conservan en disco pero no en el repo: se regeneran y pesan ~11 MB.
+output/

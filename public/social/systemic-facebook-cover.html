@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Systemic Solutions | Facebook cover</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet" />
+    <style>
+      :root { --ink: #0e0f10; --white: #f5f3f2; --cyan: #9be8ff; --purple: #c8b5ff; }
+      * { box-sizing: border-box; }
+      html, body { width: 1640px; height: 624px; margin: 0; overflow: hidden; background: var(--ink); }
+      .cover {
+        position: relative; width: 1640px; height: 624px; overflow: hidden; color: var(--white);
+        background:
+          radial-gradient(circle at 81% 46%, rgba(75, 203, 244, .11), transparent 17%),
+          radial-gradient(circle at 86% 65%, rgba(194, 163, 255, .08), transparent 19%),
+          linear-gradient(110deg, #0d0f10 0%, #111313 53%, #0c0e0f 100%);
+      }
+      .cover::before {
+        content: ''; position: absolute; inset: 0; opacity: .75;
+        background-image:
+          radial-gradient(circle, rgba(155,232,255,.58) 1px, transparent 1.4px),
+          radial-gradient(circle, rgba(200,181,255,.45) 1px, transparent 1.4px);
+        background-position: 112px 70px, 427px 236px;
+        background-size: 210px 172px, 287px 229px;
+        mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 92%, transparent 100%);
+      }
+      .grid { position: absolute; inset: 0; opacity: .18; background-image: linear-gradient(rgba(155,232,255,.18) 1px, transparent 1px), linear-gradient(90deg, rgba(155,232,255,.18) 1px, transparent 1px); background-size: 104px 104px; mask-image: radial-gradient(ellipse at 79% 49%, #000 0%, transparent 58%); }
+      .topline { position: absolute; left: 150px; top: 74px; display: flex; align-items: center; gap: 14px; font: 500 15px/1 'JetBrains Mono', monospace; letter-spacing: .15em; color: rgba(245,243,242,.68); }
+      .pulse { width: 10px; height: 10px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 18px rgba(155,232,255,.7); }
+      .brand { position: absolute; left: 150px; top: 147px; width: 760px; }
+      .brand-row { margin-bottom: 24px; }
+      .wordmark { font: 800 24px/1 'Syne', sans-serif; letter-spacing: -.055em; }
+      .eyebrow { font: 500 14px/1 'JetBrains Mono', monospace; letter-spacing: .2em; color: var(--cyan); }
+      h1 { margin: 0; font: 800 54px/.9 'Syne', sans-serif; letter-spacing: -.075em; }
+      h1 span { display: block; }
+      h1 > span { white-space: nowrap; }
+      .cyan { color: var(--cyan); font-style: italic; }
+      .purple { color: var(--purple); font-style: italic; }
+      .services { margin-top: 36px; font: 500 16px/1.45 'Inter', sans-serif; color: rgba(245,243,242,.72); }
+      .services b { color: var(--white); font-weight: 600; }
+      .site { position: absolute; left: 150px; bottom: 69px; font: 500 15px/1 'JetBrains Mono', monospace; letter-spacing: .13em; color: rgba(245,243,242,.6); }
+      .site b { color: var(--cyan); }
+      .logo-field { position: absolute; right: 90px; top: 100px; width: 420px; height: 420px; display: grid; place-items: center; }
+      .logo-field::before { content: ''; position: absolute; inset: 50px; border-radius: 50%; background: radial-gradient(circle, rgba(155,232,255,.18), rgba(200,181,255,.08) 45%, transparent 72%); filter: blur(16px); }
+      .cover-logo { position: relative; width: 390px; height: 390px; border-radius: 88px; box-shadow: 0 0 70px rgba(155,232,255,.12), 0 0 120px rgba(200,181,255,.08); }
+    </style>
+  </head>
+  <body>
+    <main class="cover">
+      <div class="grid"></div>
+      <div class="topline"><i class="pulse"></i> SYSTEMIC_SOLUTIONS // PERÚ</div>
+      <section class="brand">
+        <div class="brand-row"><div class="wordmark">SYSTEMIC SOLUTIONS</div><div class="eyebrow">SOFTWARE / IA / AUTOMATIZACIÓN</div></div>
+        <h1><span>CREAMOS SOFTWARE</span><span class="cyan">QUE IMPULSA</span><span>TU <span class="purple" style="display:inline">NEGOCIO.</span></span></h1>
+        <p class="services"><b>Software a medida</b> · Automatización e IA · Páginas web</p>
+      </section>
+      <div class="site"><b>SYSTEMIC.PE</b> // CONSTRUIMOS LO QUE SIGUE</div>
+      <div class="logo-field" aria-hidden="true"><img class="cover-logo" src="/favicon-systemic-dark.png" alt="" /></div>
+    </main>
+  </body>
+</html>

@@ -3,6 +3,12 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/systemic-stitch.html"
+    }
+  ],
   "installCommand": "npm install",
   "github": {
     "silent": true

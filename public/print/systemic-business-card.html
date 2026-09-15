@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Systemic Solutions | Tarjeta corporativa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --black: #0d0f10;
+        --surface: #131617;
+        --white: #f2f0ef;
+        --muted: #9ca8ad;
+        --cyan: #9be8ff;
+        --purple: #c8b5ff;
+        --line: rgba(155, 232, 255, .14);
+      }
+
+      * { box-sizing: border-box; }
+      html, body { width: 1134px; margin: 0; background: #26292b; }
+      body { color: var(--white); }
+
+      .card {
+        position: relative;
+        width: 1134px;
+        height: 661px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 82% 36%, rgba(155, 232, 255, .12), transparent 24%),
+          radial-gradient(circle at 78% 82%, rgba(200, 181, 255, .09), transparent 25%),
+          linear-gradient(110deg, #0b0d0e, #121516 60%, #0c0f10);
+        page-break-after: always;
+      }
+
+      .card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        opacity: .68;
+        background-image:
+          radial-gradient(circle, rgba(155, 232, 255, .6) 1px, transparent 1.6px),
+          radial-gradient(circle, rgba(200, 181, 255, .45) 1px, transparent 1.6px);
+        background-position: 88px 80px, 370px 226px;
+        background-size: 205px 173px, 287px 239px;
+        mask-image: linear-gradient(90deg, transparent 0, #000 13%, #000 90%, transparent 100%);
+      }
+
+      .grid {
+        position: absolute;
+        inset: 0;
+        opacity: .18;
+        background-image:
+          linear-gradient(var(--line) 1px, transparent 1px),
+          linear-gradient(90deg, var(--line) 1px, transparent 1px);
+        background-size: 84px 84px;
+        mask-image: radial-gradient(ellipse at 74% 50%, #000 0%, transparent 68%);
+      }
+
+      .safe { position: absolute; inset: 78px; z-index: 2; }
+      .mono { font-family: 'JetBrains Mono', monospace; }
+      .display { font-family: 'Syne', sans-serif; }
+
+      .index {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font: 500 14px/1 'JetBrains Mono', monospace;
+        letter-spacing: .16em;
+        color: rgba(242, 240, 239, .62);
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--cyan);
+        box-shadow: 0 0 20px rgba(155, 232, 255, .72);
+      }
+
+      .front .brand-lockup {
+        position: absolute;
+        left: 78px;
+        top: 185px;
+        width: 690px;
+        z-index: 2;
+      }
+
+      .front .wordmark {
+        margin: 0;
+        font: 800 54px/.9 'Syne', sans-serif;
+        letter-spacing: -.07em;
+      }
+
+      .front .tagline {
+        margin: 28px 0 0;
+        font: 800 42px/.98 'Syne', sans-serif;
+        letter-spacing: -.055em;
+      }
+
+      .cyan { color: var(--cyan); font-style: italic; }
+      .purple { color: var(--purple); font-style: italic; }
+
+      .front .services {
+        margin-top: 31px;
+        font: 500 14px/1.5 'JetBrains Mono', monospace;
+        letter-spacing: .03em;
+        color: rgba(242, 240, 239, .64);
+      }
+
+      .front .services strong { color: var(--white); }
+
+      .logo-stage {
+        position: absolute;
+        right: 76px;
+        top: 149px;
+        width: 260px;
+        height: 260px;
+        z-index: 3;
+      }
+
+      .logo-stage::before {
+        content: '';
+        position: absolute;
+        inset: 26px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(155, 232, 255, .2), rgba(200, 181, 255, .08) 46%, transparent 72%);
+        filter: blur(14px);
+      }
+
+      .logo-stage img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 56px;
+        box-shadow: 0 22px 50px rgba(0, 0, 0, .38), 0 0 60px rgba(155, 232, 255, .1);
+      }
+
+      .site-line {
+        position: absolute;
+        left: 78px;
+        bottom: 65px;
+        z-index: 2;
+        font: 700 16px/1 'JetBrains Mono', monospace;
+        letter-spacing: .13em;
+        color: var(--cyan);
+      }
+
+      .site-line span { color: rgba(242, 240, 239, .48); font-weight: 500; }
+
+      .back {
+        background:
+          radial-gradient(circle at 17% 30%, rgba(155, 232, 255, .12), transparent 24%),
+          radial-gradient(circle at 88% 88%, rgba(200, 181, 255, .09), transparent 25%),
+          linear-gradient(105deg, #101314, #0c0e0f);
+      }
+
+      .back-layout {
+        position: absolute;
+        inset: 78px;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1.05fr .95fr;
+        gap: 76px;
+      }
+
+      .back h2 {
+        margin: 72px 0 0;
+        max-width: 540px;
+        font: 800 42px/.96 'Syne', sans-serif;
+        letter-spacing: -.06em;
+      }
+
+      .back .intro {
+        margin: 24px 0 0;
+        max-width: 510px;
+        font: 500 15px/1.55 'JetBrains Mono', monospace;
+        color: rgba(242, 240, 239, .67);
+      }
+
+      .contact-panel {
+        align-self: center;
+        min-height: 390px;
+        padding: 39px 42px;
+        border: 1px solid rgba(155, 232, 255, .22);
+        border-radius: 18px;
+        background: rgba(20, 24, 25, .76);
+        box-shadow: 0 22px 55px rgba(0, 0, 0, .32);
+      }
+
+      .panel-label {
+        font: 700 13px/1 'JetBrains Mono', monospace;
+        letter-spacing: .15em;
+        color: var(--cyan);
+      }
+
+      .contact-row {
+        padding: 24px 0;
+        border-bottom: 1px solid rgba(242, 240, 239, .1);
+      }
+
+      .contact-row:last-of-type { border-bottom: 0; }
+      .contact-row small {
+        display: block;
+        margin-bottom: 10px;
+        font: 500 11px/1 'JetBrains Mono', monospace;
+        letter-spacing: .16em;
+        color: rgba(242, 240, 239, .44);
+      }
+
+      .contact-row strong {
+        display: block;
+        font: 700 21px/1.15 'JetBrains Mono', monospace;
+        color: var(--white);
+      }
+
+      .contact-row strong.accent { color: var(--purple); }
+
+      .process {
+        position: absolute;
+        left: 78px;
+        bottom: 65px;
+        z-index: 3;
+        font: 500 12px/1 'JetBrains Mono', monospace;
+        letter-spacing: .08em;
+        color: rgba(242, 240, 239, .48);
+      }
+
+      .process b { color: var(--cyan); font-weight: 500; }
+
+      @media print {
+        html, body { width: 1134px; background: transparent; }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="card front" id="front" aria-label="Frente de la tarjeta">
+      <div class="grid"></div>
+      <div class="safe"><div class="index"><i class="dot"></i>SYSTEMIC_SOLUTIONS // PERÚ</div></div>
+      <div class="brand-lockup">
+        <p class="wordmark">SYSTEMIC SOLUTIONS</p>
+        <p class="tagline">SOFTWARE QUE <span class="cyan">IMPULSA</span><br />TU <span class="purple">NEGOCIO.</span></p>
+        <p class="services"><strong>Software a medida</strong> · Automatización e IA · Páginas web</p>
+      </div>
+      <div class="logo-stage"><img src="/favicon-systemic-dark.png" alt="Logo de Systemic Solutions" /></div>
+      <div class="site-line">SYSTEMIC.PE <span>// CONSTRUIMOS LO QUE SIGUE</span></div>
+    </section>
+
+    <section class="card back" id="back" aria-label="Reverso de la tarjeta">
+      <div class="grid"></div>
+      <div class="back-layout">
+        <div>
+          <div class="index"><i class="dot"></i>TU PRÓXIMO PROYECTO</div>
+          <h2>CUÉNTANOS CÓMO TRABAJAS.<br /><span class="cyan">DISEÑAMOS LA SOLUCIÓN.</span></h2>
+          <p class="intro">Diseñamos herramientas alrededor de tu operación para automatizar procesos, conectar equipos y crecer con claridad.</p>
+        </div>
+        <div class="contact-panel">
+          <div class="panel-label">INICIAR_CONEXIÓN</div>
+          <div class="contact-row"><small>WEB</small><strong>SYSTEMIC.PE</strong></div>
+          <div class="contact-row"><small>WHATSAPP</small><strong class="accent">+51 951 045 601</strong></div>
+          <div class="contact-row"><small>SERVICIOS</small><strong>SOFTWARE · IA · WEB</strong></div>
+        </div>
+      </div>
+      <div class="process"><b>01</b> ENTENDEMOS · <b>02</b> DISEÑAMOS · <b>03</b> CONSTRUIMOS</div>
+    </section>
+  </body>
+</html>

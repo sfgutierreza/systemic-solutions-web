@@ -1,0 +1,254 @@
+<!doctype html>
+<html class="dark" lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="MiBillar es el sistema para billares en Perú que controla mesas, ventas y finanzas desde el celular." />
+  <meta name="theme-color" content="#131313" />
+  <title>MiBillar | Sistema para billares en Perú</title>
+  <link rel="canonical" href="https://www.systemic.pe/caso-mibillar.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MiBillar | Sistema para billares en Perú" />
+  <meta property="og:description" content="Controla mesas, ventas y finanzas de tu billar desde cualquier dispositivo." />
+  <meta property="og:locale" content="es_PE" />
+  <meta property="og:site_name" content="Systemic Solutions" />
+  <meta property="og:url" content="https://www.systemic.pe/caso-mibillar.html" />
+  <meta property="og:image" content="https://www.systemic.pe/og.png" />
+  <meta property="og:image:alt" content="MiBillar, sistema para billares del Perú" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MiBillar | Sistema para billares en Perú" />
+  <meta name="twitter:description" content="Controla mesas, ventas y finanzas de tu billar desde cualquier dispositivo." />
+  <meta name="twitter:image" content="https://www.systemic.pe/og.png" />
+  <link rel="icon" type="image/png" href="/favicon-systemic-dark-256.png" />
+  <link rel="apple-touch-icon" href="/favicon-systemic-dark-256.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Syne:wght@400;700;800&amp;display=swap" rel="stylesheet" />
+  <!-- icon_names limita la fuente a los 11 iconos de esta página: 1.1 MB -> ~6 KB.
+       Si añades un icono nuevo, agrégalo aquí (en orden alfabético) o no se verá. -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;icon_names=account_balance_wallet,arrow_forward,chat,inventory_2,monitoring,open_in_new,point_of_sale,receipt_long,settings,storefront,table_restaurant&amp;display=block" rel="stylesheet" />
+  <link href="/systemic-stitch.css" rel="stylesheet" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "MiBillar",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://mibillar.vercel.app",
+      "description": "Sistema para controlar mesas, ventas y finanzas de billares desde el celular.",
+      "offers": {
+        "@type": "Offer",
+        "price": "39.90",
+        "priceCurrency": "PEN"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Systemic Solutions",
+        "url": "https://www.systemic.pe/"
+      }
+    }
+  </script>
+  <script>
+    window.tailwind = window.tailwind || {};
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#a5e7ff',
+            secondary: '#d1bcff',
+            surface: '#131313',
+            'surface-low': '#1c1b1b',
+            outline: '#859399',
+            'outline-variant': '#3c494e',
+            'on-surface': '#e5e2e1',
+            'on-surface-variant': '#bbc9cf',
+            'on-primary': '#003543'
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            data: ['JetBrains Mono', 'monospace'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #131313; color: #e5e2e1; font-family: Inter, sans-serif; }
+    .glass { background: rgba(255,255,255,.03); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,.08); }
+    .tactical-glass { background: rgba(28,27,27,.78); backdrop-filter: blur(18px); border: 1px solid rgba(165,231,255,.12); box-shadow: 0 16px 40px rgba(0,0,0,.3); }
+    .text-glow { text-shadow: 0 0 26px rgba(165,231,255,.22); }
+    .scanline { position:absolute; left:0; width:100%; height:2px; pointer-events:none; background:linear-gradient(90deg,transparent,rgba(165,231,255,.55),transparent); animation:scan 5s linear infinite; }
+    @keyframes scan { from { top: 0; opacity: 0; } 15%,85% { opacity: .4; } to { top: 100%; opacity: 0; } }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .float { animation: float 5s ease-in-out infinite; }
+    .data-grid { background-image: linear-gradient(rgba(165,231,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(165,231,255,.05) 1px, transparent 1px); background-size: 28px 28px; }
+    a:focus-visible, summary:focus-visible { outline: 2px solid #a5e7ff; outline-offset: 4px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      #particle-canvas { display: none !important; }
+    }
+  </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+  <canvas id="particle-canvas" aria-hidden="true" class="fixed inset-0 z-0 pointer-events-none"></canvas>
+
+  <nav class="fixed top-0 left-0 right-0 z-50 mx-4 mt-3 flex items-center justify-between rounded-full border border-outline-variant/40 bg-[#0e0e0e]/80 px-5 py-3 shadow-[0_0_24px_rgba(71,214,255,.10)] backdrop-blur-xl sm:mx-6 sm:px-6 sm:py-4 md:mx-16 md:px-8 lg:py-5">
+    <a href="/" class="font-display text-[26px] font-extrabold tracking-tighter text-on-surface sm:text-4xl xl:text-[44px]">SYSTEMIC</a>
+    <div class="hidden items-center gap-8 font-data-label text-[14px] tracking-wider text-on-surface-variant lg:flex">
+      <a class="transition hover:text-primary" href="#modulos">MÓDULOS</a>
+      <a class="transition hover:text-primary" href="#beneficios">BENEFICIOS</a>
+      <a class="transition hover:text-primary" href="#preguntas">PREGUNTAS</a>
+    </div>
+    <a href="https://mibillar.vercel.app" target="_blank" rel="noopener noreferrer" data-track="mibillar_header" class="rounded-full bg-primary px-4 py-2.5 font-data-label text-[11px] tracking-wider text-on-primary transition hover:bg-white active:scale-95 sm:px-5 sm:text-[13px]">IR A MIBILLAR</a>
+  </nav>
+
+  <main class="relative z-10">
+    <section class="relative flex min-h-screen items-center overflow-hidden px-6 pb-20 pt-32 md:px-16">
+      <div class="data-grid absolute inset-0 opacity-60"></div>
+      <div class="mx-auto grid w-full max-w-[1440px] items-center gap-10 lg:grid-cols-[1.2fr_.8fr]">
+        <div class="relative">
+          <p class="font-data-label text-[13px] tracking-[.28em] text-primary sm:text-[14px]">CASO REAL // MIBILLAR</p>
+          <p class="mt-5 font-data-label text-[13px] tracking-[.18em] text-secondary sm:text-[14px]">PARA DUEÑOS DE BILLAR EN EL PERÚ</p>
+          <h1 class="mt-7 max-w-4xl font-display text-5xl font-extrabold leading-[.98] tracking-[-.045em] text-on-surface sm:text-[60px] xl:text-[68px]">
+            Controla tus <span class="text-primary text-glow">mesas</span> y tu <span class="text-secondary">caja</span> desde el celular.
+          </h1>
+          <p class="mt-7 max-w-2xl font-data-value text-[15px] leading-7 tracking-[.01em] text-on-surface-variant sm:text-[17px] sm:leading-8">
+            MiBillar es el sistema con el que billares de todo el Perú —desde la selva de Tingo María hasta la costa y la sierra— manejan mesas, ventas y finanzas todos los días. Sin instalar nada, desde cualquier dispositivo.
+          </p>
+          <div class="mt-9 flex flex-wrap gap-4">
+            <a href="https://mibillar.vercel.app" target="_blank" rel="noopener noreferrer" data-track="mibillar_start_hero" class="inline-flex items-center gap-3 rounded-full bg-primary px-6 py-4 font-data-label text-[13px] tracking-wider text-on-primary transition hover:bg-white active:scale-95">
+              EMPEZAR CON MIBILLAR <span class="material-symbols-outlined text-lg">arrow_forward</span>
+            </a>
+            <a href="https://mibillar.vercel.app" target="_blank" rel="noopener noreferrer" data-track="mibillar_demo_hero" class="inline-flex items-center gap-3 rounded-full border border-outline-variant px-6 py-4 font-data-label text-[13px] tracking-wider text-on-surface transition hover:border-primary hover:text-primary">
+              VERLO EN VIVO <span class="material-symbols-outlined text-lg">open_in_new</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="float relative mx-auto w-full max-w-[540px] overflow-hidden rounded-2xl border border-primary/25 bg-[#101719]/90 p-5 shadow-[0_0_90px_rgba(71,214,255,.14)]">
+          <div class="scanline"></div>
+          <div class="flex items-center justify-between border-b border-white/10 pb-4">
+            <div class="flex items-center gap-2 font-data-label text-[13px] tracking-wider text-primary"><span class="h-2 w-2 animate-pulse rounded-full bg-primary"></span> MIBILLAR // OPERANDO</div>
+            <span class="font-data-value text-[11px] text-outline">HOY · 08:42 PM</span>
+          </div>
+          <div class="mt-5 grid grid-cols-2 gap-3">
+            <div class="rounded-xl border border-primary/20 bg-primary/5 p-4"><p class="font-data-label text-[11px] tracking-wider text-outline">MESAS ACTIVAS</p><p class="mt-2 font-display text-3xl text-primary">08</p></div>
+            <div class="rounded-xl border border-secondary/20 bg-secondary/5 p-4"><p class="font-data-label text-[11px] tracking-wider text-outline">VENTAS HOY</p><p class="mt-2 font-display text-3xl text-secondary">S/ 624</p></div>
+          </div>
+          <div class="mt-4 space-y-2 rounded-xl border border-white/10 bg-black/20 p-4 font-data-value text-[13px]">
+            <div class="flex items-center justify-between text-on-surface"><span>MESA 03</span><span class="text-primary">01:26:14</span></div>
+            <div class="flex items-center justify-between text-on-surface"><span>MESA 06</span><span class="text-primary">00:42:09</span></div>
+            <div class="flex items-center justify-between text-on-surface"><span>CAJA DEL DÍA</span><span class="text-secondary">ACTUALIZADA</span></div>
+          </div>
+          <div class="mt-5 flex items-center justify-between rounded-xl bg-white/5 px-4 py-3">
+            <span class="font-data-label text-[13px] text-on-surface-variant">DESDE</span><span class="font-display text-2xl text-on-surface">S/ 39.90 <span class="font-data-value text-[11px] text-outline">/ MES</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative border-y border-white/10 bg-black/30 px-6 py-20 md:px-16">
+      <div class="mx-auto grid max-w-[1440px] gap-8 md:grid-cols-3">
+        <div class="tactical-glass min-h-[186px] rounded-xl p-8 xl:p-9"><p class="font-data-label text-[14px] tracking-[.2em] text-primary">BILLARES DE TODO EL PERÚ</p><p class="mt-5 font-data-value text-[16px] leading-7 text-on-surface-variant xl:text-[18px] xl:leading-8">De Tingo María a la costa y la sierra: una operación más clara, desde cualquier celular.</p></div>
+        <div class="tactical-glass min-h-[186px] rounded-xl p-8 xl:p-9"><p class="font-data-label text-[14px] tracking-[.2em] text-secondary">S/ 39.90 AL MES</p><p class="mt-5 font-data-value text-[16px] leading-7 text-on-surface-variant xl:text-[18px] xl:leading-8">Un precio simple para tener mesas, caja y resultados bajo control.</p></div>
+        <div class="tactical-glass min-h-[186px] rounded-xl p-8 xl:p-9"><p class="font-data-label text-[14px] tracking-[.2em] text-primary">EMPIEZAS HOY</p><p class="mt-5 font-data-value text-[16px] leading-7 text-on-surface-variant xl:text-[18px] xl:leading-8">Sin instalación. Te lo dejamos listo y empiezas a usarlo el mismo día.</p></div>
+      </div>
+    </section>
+
+    <section id="modulos" class="relative px-6 py-28 md:px-16">
+      <div class="mx-auto max-w-[1440px]">
+        <p class="font-data-label text-[14px] tracking-[.28em] text-secondary">MÓDULOS</p>
+        <div class="mt-6 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+          <h2 class="max-w-3xl font-display text-5xl font-extrabold leading-[.98] tracking-[-.045em] text-on-surface sm:text-6xl xl:text-[68px]">Todo lo que más usas para operar tu billar.</h2>
+          <p class="max-w-md font-data-value text-[16px] leading-7 text-on-surface-variant xl:text-[18px] xl:leading-8">Sin menús complicados: solo lo que necesitas para que cada turno esté bajo control.</p>
+        </div>
+        <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="tactical-glass group min-h-[204px] rounded-xl p-8 transition hover:border-primary/60 xl:p-9"><span class="material-symbols-outlined text-4xl text-primary">table_restaurant</span><h3 class="mt-8 font-data-label text-[20px] leading-6 text-on-surface">Mesas</h3><p class="mt-4 font-data-value text-[16px] leading-7 text-on-surface-variant">Ocupación y tiempos.</p></article>
+          <article class="tactical-glass group min-h-[204px] rounded-xl p-8 transition hover:border-primary/60 xl:p-9"><span class="material-symbols-outlined text-4xl text-primary">inventory_2</span><h3 class="mt-8 font-data-label text-[20px] leading-6 text-on-surface">Productos</h3><p class="mt-4 font-data-value text-[16px] leading-7 text-on-surface-variant">Stock y costos.</p></article>
+          <article class="tactical-glass group min-h-[204px] rounded-xl p-8 transition hover:border-primary/60 xl:p-9"><span class="material-symbols-outlined text-4xl text-primary">point_of_sale</span><h3 class="mt-8 font-data-label text-[20px] leading-6 text-on-surface">Venta</h3><p class="mt-4 font-data-value text-[16px] leading-7 text-on-surface-variant">Consumo por mesa.</p></article>
+          <article class="tactical-glass group min-h-[204px] rounded-xl p-8 transition hover:border-secondary/60 xl:p-9"><span class="material-symbols-outlined text-4xl text-secondary">account_balance_wallet</span><h3 class="mt-8 font-data-label text-[20px] leading-6 text-on-surface">Finanzas</h3><p class="mt-4 font-data-value text-[16px] leading-7 text-on-surface-variant">Gastos y resultados.</p></article>
+          <article class="tactical-glass group min-h-[204px] rounded-xl p-8 transition hover:border-secondary/60 xl:p-9"><span class="material-symbols-outlined text-4xl text-secondary">settings</span><h3 class="mt-8 font-data-label text-[20px] leading-6 text-on-surface">Ajustes</h3><p class="mt-4 font-data-value text-[16px] leading-7 text-on-surface-variant">Usuarios y negocio.</p></article>
+          <article class="min-h-[204px] rounded-xl border border-secondary/30 bg-secondary/10 p-8 xl:p-9"><span class="font-data-label text-[14px] tracking-[.18em] text-secondary">LO QUE MÁS USAS</span><p class="mt-8 font-display text-[34px] leading-[1.05] text-on-surface">Todo en un solo lugar, desde tu celular.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios" class="relative bg-[#18171a]/90 px-6 py-28 md:px-16">
+      <div class="mx-auto max-w-[1440px]">
+        <p class="font-data-label text-[14px] tracking-[.28em] text-primary">POR QUÉ MIBILLAR</p>
+        <h2 class="mt-6 max-w-4xl font-display text-5xl font-extrabold leading-[.98] tracking-[-.045em] text-on-surface sm:text-6xl">Menos papel. Más claridad para decidir.</h2>
+        <div class="mt-14 grid gap-5 lg:grid-cols-3">
+          <article class="rounded-2xl border border-white/10 bg-black/20 p-8 xl:p-9"><span class="material-symbols-outlined text-4xl text-primary">receipt_long</span><h3 class="mt-8 font-display text-3xl text-on-surface">Deja el papel y el Excel</h3><p class="mt-5 font-data-value text-[16px] leading-7 text-on-surface-variant xl:text-[17px] xl:leading-8">Registra cada mesa y cada consumo desde el celular. Sabes cuánto entró y cuánto salió al cerrar la noche.</p></article>
+          <article class="rounded-2xl border border-secondary/25 bg-secondary/5 p-8 xl:p-9"><span class="material-symbols-outlined text-4xl text-secondary">monitoring</span><h3 class="mt-8 font-display text-3xl text-on-surface">Caja que no miente</h3><p class="mt-5 font-data-value text-[16px] leading-7 text-on-surface-variant xl:text-[17px] xl:leading-8">Ventas, gastos y resultados en tiempo real. Sin cuentas que no cuadran ni “se me perdió la boleta”.</p></article>
+          <article class="rounded-2xl border border-white/10 bg-black/20 p-8 xl:p-9"><span class="material-symbols-outlined text-4xl text-primary">storefront</span><h3 class="mt-8 font-display text-3xl text-on-surface">Hecho para tu billar</h3><p class="mt-5 font-data-value text-[16px] leading-7 text-on-surface-variant xl:text-[17px] xl:leading-8">Multi-negocio si tienes más de un local. Cada uno con sus datos aparte, desde el mismo sistema.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="preguntas" class="relative px-6 py-28 md:px-16">
+      <div class="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[.8fr_1.2fr]">
+        <div><p class="font-data-label text-[14px] tracking-[.28em] text-secondary">PREGUNTAS</p><h2 class="mt-6 font-display text-5xl font-extrabold leading-[.98] tracking-[-.045em] text-on-surface sm:text-6xl">¿Tienes dudas?</h2><p class="mt-6 max-w-md font-data-value text-[16px] leading-7 text-on-surface-variant xl:text-[17px] xl:leading-8">Te acompañamos desde el primer día para que MiBillar sea fácil de usar.</p></div>
+        <div class="space-y-4">
+          <details class="tactical-glass group rounded-xl p-7" open><summary class="cursor-pointer list-none pr-8 font-data-label text-[18px] leading-7 text-on-surface">¿Tengo que instalar algo?<span class="float-right text-primary">+</span></summary><p class="mt-5 font-data-value text-[16px] leading-7 text-on-surface-variant">No. Abres desde el celular o la computadora.</p></details>
+          <details class="tactical-glass group rounded-xl p-7"><summary class="cursor-pointer list-none pr-8 font-data-label text-[18px] leading-7 text-on-surface">¿Y si no sé de sistemas?<span class="float-right text-primary">+</span></summary><p class="mt-5 font-data-value text-[16px] leading-7 text-on-surface-variant">Lo dejamos listo y te enseñamos. Soporte por WhatsApp.</p></details>
+          <details class="tactical-glass group rounded-xl p-7"><summary class="cursor-pointer list-none pr-8 font-data-label text-[18px] leading-7 text-on-surface">¿Puedo probarlo?<span class="float-right text-primary">+</span></summary><p class="mt-5 font-data-value text-[16px] leading-7 text-on-surface-variant">Sí. Te lo encendemos el mismo día y empiezas a usarlo.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative px-6 pb-24 md:px-16">
+      <div class="mx-auto max-w-[1440px] rounded-[32px] border border-primary/20 bg-gradient-to-br from-[#10212a] via-[#121829] to-[#241a35] px-8 py-16 text-center shadow-[0_0_100px_rgba(71,214,255,.1)] md:px-16 md:py-20">
+        <p class="font-data-label text-[14px] tracking-[.25em] text-primary">MIBILLAR</p>
+        <h2 class="mx-auto mt-6 max-w-4xl font-display text-4xl font-extrabold leading-[.98] tracking-[-.045em] text-on-surface sm:text-5xl">Tu operación puede empezar a estar clara desde hoy.</h2>
+        <div class="mt-10 flex flex-wrap justify-center gap-4">
+          <a href="https://mibillar.vercel.app" target="_blank" rel="noopener noreferrer" data-track="mibillar_start_final" class="inline-flex items-center gap-3 rounded-full bg-primary px-7 py-4 font-data-label text-[13px] tracking-wider text-on-primary transition hover:bg-white">EMPEZAR CON MIBILLAR <span aria-hidden="true" class="material-symbols-outlined text-lg">arrow_forward</span></a>
+          <a href="https://mibillar.vercel.app" target="_blank" rel="noopener noreferrer" data-track="mibillar_demo_final" class="inline-flex items-center gap-3 rounded-full border border-white/20 px-7 py-4 font-data-label text-[13px] tracking-wider text-on-surface transition hover:border-primary hover:text-primary">VERLO EN VIVO <span aria-hidden="true" class="material-symbols-outlined text-lg">open_in_new</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 border-t border-outline-variant/30 bg-black/50 px-6 py-8 md:px-16">
+    <div class="mx-auto flex max-w-[1440px] flex-col justify-between gap-6 md:flex-row md:items-end">
+      <div><a href="/" class="font-display text-3xl font-extrabold tracking-tight text-on-surface">SYSTEMIC SOLUTIONS</a><p class="mt-2 font-data-value text-[13px] text-on-surface-variant">© 2026 Systemic Solutions. Todos los derechos reservados.</p></div>
+      <a href="https://wa.me/51951045601?text=Hola%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20MiBillar%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" data-track="whatsapp_mibillar" class="inline-flex items-center gap-2 font-data-label text-[13px] tracking-wider text-primary transition hover:text-white"><span aria-hidden="true" class="material-symbols-outlined">chat</span> ESCRÍBENOS POR WHATSAPP</a>
+    </div>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById('particle-canvas');
+    const context = canvas.getContext('2d');
+    let points = [];
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    function makePoints() { points = Array.from({ length: Math.min(110, Math.floor(window.innerWidth / 12)) }, () => ({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, vx: (Math.random() - .5) * .22, vy: (Math.random() - .5) * .22, r: Math.random() * 1.6 + .4 })); }
+    function renderParticles() {
+      if (prefersReducedMotion.matches) return;
+      if (document.hidden) { requestAnimationFrame(renderParticles); return; }
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < points.length; i++) {
+        const point = points[i]; point.x += point.vx; point.y += point.vy;
+        if (point.x < 0 || point.x > canvas.width) point.vx *= -1;
+        if (point.y < 0 || point.y > canvas.height) point.vy *= -1;
+        context.fillStyle = 'rgba(165,231,255,.42)'; context.beginPath(); context.arc(point.x, point.y, point.r, 0, Math.PI * 2); context.fill();
+        for (let j = i + 1; j < points.length; j++) { const other = points[j]; const dx = point.x - other.x; const dy = point.y - other.y; const distance = Math.hypot(dx, dy); if (distance < 110) { context.strokeStyle = `rgba(165,231,255,${.08 * (1 - distance / 110)})`; context.beginPath(); context.moveTo(point.x, point.y); context.lineTo(other.x, other.y); context.stroke(); } }
+      }
+      requestAnimationFrame(renderParticles);
+    }
+    document.querySelectorAll('[data-track]').forEach((element) => {
+      element.addEventListener('click', () => window.va('event', { name: element.dataset.track }));
+    });
+    if (!prefersReducedMotion.matches) {
+      resizeCanvas(); makePoints(); renderParticles();
+      window.addEventListener('resize', () => { resizeCanvas(); makePoints(); });
+    }
+  </script>
+</body>
+</html>

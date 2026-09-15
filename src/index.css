@@ -6,25 +6,25 @@
   :root {
     /* Fondo cálido (casi blanco azulado) en vez de blanco puro: la página
        respira y se siente más viva, igual que la referencia DataFlow. */
-    --background: 210 20% 98%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 210 20% 94%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 210 20% 94%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 174 62% 56%; /* teal de marca como acento */
-    --accent-foreground: 240 5.9% 10%;
+    --background: 210 4% 6%;
+    --foreground: 210 15% 92%;
+    --card: 210 5% 8%;
+    --card-foreground: 210 15% 92%;
+    --popover: 210 5% 8%;
+    --popover-foreground: 210 15% 92%;
+    --primary: 196 100% 82%;
+    --primary-foreground: 195 100% 10%;
+    --secondary: 210 4% 13%;
+    --secondary-foreground: 210 15% 92%;
+    --muted: 210 4% 13%;
+    --muted-foreground: 202 12% 66%;
+    --accent: 263 100% 87%;
+    --accent-foreground: 263 100% 18%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 240 5.9% 10%;
+    --border: 202 12% 25%;
+    --input: 202 12% 25%;
+    --ring: 196 100% 82%;
     /* Acento cálido (coral) para dar vida: badges, detalles, CTA. */
     --coral: 355 70% 78%;
     --coral-foreground: 355 60% 30%;
@@ -76,9 +76,57 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
   }
   /* Titulares en Space Grotesk (display); el cuerpo usa Inter (sans). */
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
   }
+}
+
+@layer utilities {
+  .grid-bg {
+    background-image: linear-gradient(rgba(165, 231, 255, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(165, 231, 255, 0.035) 1px, transparent 1px), radial-gradient(circle at 50% 35%, rgba(71, 214, 255, 0.09), transparent 37%);
+    background-size: 52px 52px, 52px 52px, auto;
+    animation: grid-drift 18s linear infinite;
+  }
+  .hero-void {
+    background: radial-gradient(circle at center, rgba(71, 214, 255, .08), transparent 70%), #131313;
+  }
+  .hero-terminal { transform: perspective(1000px) rotateX(12deg); }
+  .terminal-panel {
+    background: rgba(19, 19, 19, .6);
+    border: 1px solid rgba(71, 214, 255, .2);
+    box-shadow: 0 0 40px rgba(0, 0, 0, .5), inset 0 0 20px rgba(71, 214, 255, .05);
+  }
+  .terminal-scanline {
+    position: absolute;
+    inset-inline: 0;
+    top: -3px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(165, 231, 255, .75), transparent);
+    animation: terminal-scan 5s linear infinite;
+    pointer-events: none;
+  }
+  .animate-hero-title { animation: hero-float 6s ease-in-out infinite; }
+}
+
+@keyframes grid-drift {
+  from { background-position: 0 0, 0 0, center; }
+  to { background-position: 52px 52px, 52px 52px, center; }
+}
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes terminal-scan {
+  from { transform: translateY(-5px); opacity: 0; }
+  12%, 88% { opacity: .7; }
+  to { transform: translateY(360px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid-bg, .animate-hero-title, .terminal-scanline { animation: none; }
 }

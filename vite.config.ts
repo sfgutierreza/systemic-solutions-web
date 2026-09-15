@@ -1,11 +1,24 @@
 import path from "path"
 import react from "@vitejs/plugin-react"
-import { defineConfig } from "vite"
+import { defineConfig, type Plugin } from "vite"
+
+const systemicHomepageInDevelopment: Plugin = {
+  name: 'systemic-homepage-in-development',
+  configureServer(server) {
+    server.middlewares.use((request, _response, next) => {
+      const pathname = request.url?.split('?')[0]
+      if (pathname === '/' || pathname === '/index.html') {
+        request.url = '/systemic-stitch.html'
+      }
+      next()
+    })
+  },
+}
 
 // https://vite.dev/config/
 export default defineConfig({
   base: './',
-  plugins: [react()],
+  plugins: [systemicHomepageInDevelopment, react()],
   server: {
     port: 3000,
   },
