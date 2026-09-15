@@ -1,0 +1,8 @@
+# Solo se sube lo necesario para construir y publicar el sitio.
+node_modules
+dist
+tmp
+output
+brand
+scripts
+PROMPT_WEB_SYSTEMIC.md

@@ -1,41 +1,48 @@
-# README — Systemic Solutions (sitio web corporativo)
+# Systemic Solutions — sitio web (systemic.pe)
 
-Web corporativa de Systemic Solutions: agencia de software, IA y automatización
-en Perú. Construida con React 19 + Vite 7 + TypeScript + Tailwind CSS + shadcn/ui
-+ Framer Motion.
+Web corporativa de Systemic Solutions: software a medida, automatizacion e IA
+para negocios en Peru. Tingo Maria, Peru.
 
-## Stack
-- React 19, Vite 7, TypeScript
-- Tailwind CSS v3 + shadcn/ui
-- Framer Motion (animaciones)
-- Vercel Web Analytics (`@vercel/analytics`, sin cookies)
-- Deploy: Vercel (auto-deploy desde GitHub)
+Son **paginas estaticas**. No hay framework ni aplicacion: el navegador recibe
+el HTML tal cual. La unica dependencia es Tailwind, que compila el CSS.
 
-## Desarrollo local
+## Estructura
+
+```
+public/     El sitio. Se publica tal cual; todo lo que este aqui es publico.
+  systemic-stitch.html    Home (servida en / segun routes de vercel.json)
+  caso-mibillar.html      Caso MiBillar
+  cosmic-core.js          Visual 3D del sector Servicios (modulo ES)
+  systemic-stitch.css     GENERADO por npm run build - no editar a mano
+styles/     Entrada de Tailwind (@tailwind base/components/utilities)
+brand/      Material de marca interno: tarjeta, portadas, docs. NO se publica.
+scripts/    Generadores de la tarjeta, las portadas y los PDFs comerciales
+output/     Salida de scripts/ (PDFs, ZIP de imprenta). Fuera de git.
+```
+
+## Desarrollo
+
 ```bash
 npm install
-npm run dev      # http://localhost:5173
+npm run dev     # recompila el CSS al vuelo
+npm run serve   # sirve public/ en http://localhost:4173
 ```
 
-## Build de producción
-```bash
-npm run build    # genera /dist
-npm run preview  # sirve /dist localmente
-```
+`npm run build` regenera `public/systemic-stitch.css`. **Hay que ejecutarlo
+cada vez que se anadan clases de Tailwind al HTML**, o esas clases no tendran
+estilo: el CSS solo incluye las clases que Tailwind encuentra en los archivos
+listados en `content` de `tailwind.stitch.config.cjs`.
 
-## Deploy (Vercel + GitHub)
-1. Subir este repo a GitHub (rama `main`).
-2. En Vercel: "Import Git Repository" → seleccionar el repo.
-3. Build settings se toman de `vercel.json` (build `npm run build`, output `dist`).
-4. Habilitar "Analytics" en la pestaña del proyecto para ver métricas.
-5. (Recomendado) Comprar y conectar dominio propio `systemic.pe` en
-   Project → Settings → Domains de Vercel, y confirmar que `og:image` /
-   `canonical` / `og:url` en `index.html` apuntan a `https://systemic.pe`.
+## Deploy
 
-## Notas de ingeniería
-- `base: './'` en vite.config para assets relativos (compatible con cualquier host).
-- `og:image` usa URL absoluta para vista previa en WhatsApp (ver comentario en index.html).
-- Teléfono de contacto centralizado en `src/lib/contact.ts`.
-- Code-splitting: react y framer-motion en chunks separados para menor TTI.
+Vercel corre `npm run build` y publica `public/`.
 
-© 2026 Systemic Solutions. Todos los derechos reservados.
+## Dependencias externas en runtime
+
+`cosmic-core.js` importa Three.js desde `esm.sh` (~750 KB). Si ese CDN falla,
+el visual 3D no aparece; el resto de la seccion funciona igual.
+
+## Regla de contenido
+
+Nada de metricas, testimonios ni nombres de clientes inventados. Nombrar a un
+cliente requiere su permiso.

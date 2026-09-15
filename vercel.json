@@ -1,15 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite",
+  "outputDirectory": "public",
+  "installCommand": "npm install",
+  "framework": null,
   "routes": [
     {
       "src": "/",
       "dest": "/systemic-stitch.html"
     }
   ],
-  "installCommand": "npm install",
   "github": {
     "silent": true
   }
