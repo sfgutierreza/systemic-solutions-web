@@ -2,13 +2,16 @@ import { createReadStream, existsSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { extname, join, normalize } from 'node:path';
 import { once } from 'node:events';
+import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 
 const require = createRequire('C:/Users/User/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js');
 const { chromium } = require('playwright');
 
-const publicDir = normalize('C:/Users/User/OneDrive/Documentos/SystemicSolutions-App/public');
-const outputPath = join(publicDir, 'social/systemic-facebook-cover-hd.png');
+// Las piezas de marca viven en brand/, fuera de public/: son material interno
+// y no deben publicarse en el sitio. Ruta derivada del script, no absoluta.
+const brandDir = normalize(fileURLToPath(new URL('../brand/', import.meta.url)));
+const outputPath = join(brandDir, 'social/systemic-facebook-cover-hd.png');
 const contentTypes = {
   '.css': 'text/css; charset=utf-8',
   '.html': 'text/html; charset=utf-8',
@@ -21,9 +24,9 @@ const contentTypes = {
 const server = createServer((request, response) => {
   const requestPath = new URL(request.url, 'http://127.0.0.1').pathname.replace(/^[/\\]+/, '');
   const safePath = normalize(requestPath).replace(/^([.][.][\\/])+/, '');
-  const filePath = join(publicDir, safePath === '/' ? 'social/systemic-facebook-cover.html' : safePath);
+  const filePath = join(brandDir, safePath === '/' ? 'social/systemic-facebook-cover.html' : safePath);
 
-  if (!filePath.startsWith(publicDir) || !existsSync(filePath)) {
+  if (!filePath.startsWith(brandDir) || !existsSync(filePath)) {
     response.writeHead(404).end();
     return;
   }
