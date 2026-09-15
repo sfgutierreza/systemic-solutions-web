@@ -253,6 +253,53 @@
         .skip-link:focus { top: 16px; }
         .nav-actions { display: flex; align-items: center; }
         .nav-menu-toggle, .nav-mobile-menu { display: none; }
+        /* Desplegable CASOS del nav de escritorio. El navbar no recorta, asi que
+           el panel puede salirse por debajo sin overflow visible. */
+        .nav-casos { position: relative; }
+        .nav-casos-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+            padding: 0;
+            border: 0;
+            background: none;
+            cursor: pointer;
+        }
+        .nav-casos-chevron { font-size: 18px; transition: transform 220ms ease; }
+        .nav-casos-toggle[aria-expanded="true"] .nav-casos-chevron { transform: rotate(180deg); }
+        .nav-casos-menu {
+            position: absolute;
+            top: calc(100% + 14px);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 60;
+            display: flex;
+            flex-direction: column;
+            min-width: 210px;
+            padding: 8px;
+            border: 1px solid rgba(165, 231, 255, 0.2);
+            border-radius: 14px;
+            background: rgba(14, 14, 14, 0.96);
+            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(22px);
+        }
+        .nav-casos-menu[hidden] { display: none; }
+        .nav-casos-menu a {
+            padding: 12px 14px;
+            border-radius: 9px;
+            color: #e5e2e1;
+            font: 500 12px/1 "JetBrains Mono", monospace;
+            letter-spacing: 0.08em;
+            white-space: nowrap;
+            transition: background 180ms ease, color 180ms ease;
+        }
+        .nav-casos-menu a:hover, .nav-casos-menu a:focus-visible { background: rgba(165, 231, 255, 0.12); color: #a5e7ff; }
+        .nav-mobile-group {
+            padding: 12px 12px 4px;
+            color: #859399;
+            font: 500 10px/1 "JetBrains Mono", monospace;
+            letter-spacing: 0.18em;
+        }
         a:focus-visible, button:focus-visible, summary:focus-visible {
             outline: 2px solid #a5e7ff;
             outline-offset: 4px;
@@ -464,7 +511,13 @@
 <a class="font-data-label text-data-label text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" href="#servicios">SERVICIOS</a>
 <a class="font-data-label text-data-label text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" href="#como-lo-hacemos">CÓMO LO HACEMOS</a>
 <a class="font-data-label text-data-label text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" href="#futuro">FUTURO</a>
-<a class="font-data-label text-data-label text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-track="view_case_mibillar" href="/caso-mibillar.html">CASO MIBILLAR</a>
+<div class="nav-casos">
+<button aria-controls="casos-menu" aria-expanded="false" class="nav-casos-toggle font-data-label text-data-label text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" id="casos-toggle" type="button">CASOS <span aria-hidden="true" class="material-symbols-outlined nav-casos-chevron" data-icon="expand_more">expand_more</span></button>
+<div class="nav-casos-menu" hidden id="casos-menu">
+<a data-track="view_case_mibillar" href="/caso-mibillar.html">MIBILLAR</a>
+<a data-track="view_case_tingo_impulsa" href="/tingo-impulsa.html">TINGO IMPULSA</a>
+</div>
+</div>
 </div>
 <div class="nav-actions">
 <button aria-controls="mobile-navigation" aria-expanded="false" aria-label="Abrir navegación" class="nav-menu-toggle" id="nav-menu-toggle" type="button"><span aria-hidden="true" class="material-symbols-outlined">menu</span></button>
@@ -478,7 +531,9 @@
 <a href="#servicios">SERVICIOS <span aria-hidden="true">↘</span></a>
 <a href="#como-lo-hacemos">CÓMO_LO_HACEMOS <span aria-hidden="true">↘</span></a>
 <a href="#futuro">FUTURO <span aria-hidden="true">↘</span></a>
-<a data-track="view_case_mibillar" href="/caso-mibillar.html">CASO_MIBILLAR <span aria-hidden="true">↗</span></a>
+<p class="nav-mobile-group">CASOS</p>
+<a data-track="view_case_mibillar" href="/caso-mibillar.html">MIBILLAR <span aria-hidden="true">↗</span></a>
+<a data-track="view_case_tingo_impulsa" href="/tingo-impulsa.html">TINGO_IMPULSA <span aria-hidden="true">↗</span></a>
 </div>
 <!-- SideNavBar -->
 <aside aria-label="Navegación rápida" class="fixed right-0 top-1/2 -translate-y-1/2 z-40 h-auto flex flex-col py-gutter bg-surface-container-low/80 backdrop-blur-md rounded-l-xl w-16 hover:w-64 transition-all duration-500 overflow-hidden border-l border-y border-outline-variant/50 shadow-2xl shadow-primary/5 group">
@@ -872,6 +927,36 @@
             });
         }
 
+        function setupCasosDropdown() {
+            const toggle = document.getElementById('casos-toggle');
+            const menu = document.getElementById('casos-menu');
+            if (!toggle || !menu) return;
+
+            const cerrar = () => {
+                menu.hidden = true;
+                toggle.setAttribute('aria-expanded', 'false');
+            };
+
+            toggle.addEventListener('click', () => {
+                const abrir = menu.hidden;
+                menu.hidden = !abrir;
+                toggle.setAttribute('aria-expanded', String(abrir));
+            });
+            // Escape devuelve el foco al boton: si no, queda perdido en el panel oculto.
+            document.addEventListener('keydown', (evento) => {
+                if (evento.key !== 'Escape' || menu.hidden) return;
+                cerrar();
+                toggle.focus();
+            });
+            document.addEventListener('click', (evento) => {
+                if (!menu.hidden && !menu.contains(evento.target) && !toggle.contains(evento.target)) cerrar();
+            });
+            // Al salir con Tab del ultimo enlace el panel ya no aporta nada.
+            menu.addEventListener('focusout', (evento) => {
+                if (!menu.contains(evento.relatedTarget) && evento.relatedTarget !== toggle) cerrar();
+            });
+        }
+
         function updateTerminalFeed() {
             const hexDisplay = document.getElementById('hex-feed');
             const connDisplay = document.getElementById('connection-count');
@@ -895,6 +980,7 @@
         window.addEventListener('load', () => {
             setupAnalyticsEvents();
             setupMobileNavigation();
+            setupCasosDropdown();
             // El visual 3D lo monta /cosmic-core.js (módulo ES, se autoinicia).
             if (prefersReducedMotion.matches) return;
             initCanvas();

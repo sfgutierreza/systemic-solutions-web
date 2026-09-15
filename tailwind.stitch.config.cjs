@@ -1,7 +1,11 @@
 /** Tailwind local para las páginas estáticas de Systemic y MiBillar. */
 module.exports = {
   darkMode: 'class',
-  content: ['./public/systemic-stitch.html', './public/caso-mibillar.html'],
+  content: [
+    './public/systemic-stitch.html',
+    './public/caso-mibillar.html',
+    './public/tingo-impulsa.html',
+  ],
   theme: {
     extend: {
       colors: {
