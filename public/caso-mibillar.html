@@ -41,11 +41,20 @@
       "operatingSystem": "Web",
       "url": "https://mibillar.vercel.app",
       "description": "Sistema para controlar mesas, ventas y finanzas de billares desde el celular.",
-      "offers": {
-        "@type": "Offer",
-        "price": "39.90",
-        "priceCurrency": "PEN"
-      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Plan mensual",
+          "price": "49.90",
+          "priceCurrency": "PEN"
+        },
+        {
+          "@type": "Offer",
+          "name": "Plan anual",
+          "price": "500.00",
+          "priceCurrency": "PEN"
+        }
+      ],
       "publisher": {
         "@type": "Organization",
         "name": "Systemic Solutions",
@@ -148,8 +157,13 @@
             <div class="flex items-center justify-between text-on-surface"><span>MESA 06</span><span class="text-primary">00:42:09</span></div>
             <div class="flex items-center justify-between text-on-surface"><span>CAJA DEL DÍA</span><span class="text-secondary">ACTUALIZADA</span></div>
           </div>
-          <div class="mt-5 flex items-center justify-between rounded-xl bg-white/5 px-4 py-3">
-            <span class="font-data-label text-[13px] text-on-surface-variant">DESDE</span><span class="font-display text-2xl text-on-surface">S/ 39.90 <span class="font-data-value text-[11px] text-outline">/ MES</span></span>
+          <div class="mt-5 rounded-xl bg-white/5 px-4 py-3">
+            <div class="flex items-center justify-between">
+              <span class="font-data-label text-[13px] text-on-surface-variant">MENSUAL</span><span class="font-display text-2xl text-on-surface">S/ 49.90</span>
+            </div>
+            <div class="mt-2 flex items-center justify-between border-t border-white/10 pt-2">
+              <span class="font-data-label text-[13px] text-on-surface-variant">ANUAL</span><span class="font-display text-xl text-primary">S/ 500.00</span>
+            </div>
           </div>
         </div>
       </div>
@@ -158,7 +172,7 @@
     <section class="relative border-y border-white/10 bg-black/30 px-6 py-20 md:px-16">
       <div class="mx-auto grid max-w-[1440px] gap-8 md:grid-cols-3">
         <div class="tactical-glass min-h-[186px] rounded-xl p-8 xl:p-9"><p class="font-data-label text-[14px] tracking-[.2em] text-primary">BILLARES DE TODO EL PERÚ</p><p class="mt-5 font-data-value text-[16px] leading-7 text-on-surface-variant xl:text-[18px] xl:leading-8">De Tingo María a la costa y la sierra: una operación más clara, desde cualquier celular.</p></div>
-        <div class="tactical-glass min-h-[186px] rounded-xl p-8 xl:p-9"><p class="font-data-label text-[14px] tracking-[.2em] text-secondary">S/ 39.90 AL MES</p><p class="mt-5 font-data-value text-[16px] leading-7 text-on-surface-variant xl:text-[18px] xl:leading-8">Un precio simple para tener mesas, caja y resultados bajo control.</p></div>
+        <div class="tactical-glass min-h-[186px] rounded-xl p-8 xl:p-9"><p class="font-data-label text-[14px] tracking-[.2em] text-secondary">S/ 49.90 AL MES</p><p class="mt-5 font-data-value text-[16px] leading-7 text-on-surface-variant xl:text-[18px] xl:leading-8">O S/ 500.00 al año y ahorras S/ 98.80. Un precio simple para tener mesas, caja y resultados bajo control.</p></div>
         <div class="tactical-glass min-h-[186px] rounded-xl p-8 xl:p-9"><p class="font-data-label text-[14px] tracking-[.2em] text-primary">EMPIEZAS HOY</p><p class="mt-5 font-data-value text-[16px] leading-7 text-on-surface-variant xl:text-[18px] xl:leading-8">Sin instalación. Te lo dejamos listo y empiezas a usarlo el mismo día.</p></div>
       </div>
     </section>
